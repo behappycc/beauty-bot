@@ -13,7 +13,24 @@ class BeautyBot(object):
         dm.test()
         nlg = NaturalLanguageGeneration()
         nlg.test()
-        return 'hello'
+        message = 'hello'
+        message_attachments = [
+            {
+                "fallback": "Upgrade your Slack client to use messages like these.",
+                "color": "#3AA3E3",
+                "attachment_type": "default",
+                "callback_id": "menu_options_2319",
+                "actions": [
+                    {
+                        "name": "games_list",
+                        "text": "Pick a game...",
+                        "type": "select",
+                        "data_source": "external"
+                    }
+                ]
+            }
+        ]
+        return message, message_attachments
 
 
 def main():

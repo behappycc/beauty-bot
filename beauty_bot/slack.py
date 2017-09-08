@@ -1,7 +1,11 @@
 import os
 import time
+import json
+from slacker import Slacker
 from slackclient import SlackClient
+
 from beauty_bot import BeautyBot
+
 
 from slack_config import SLACK_BOT_TOKEN, BOT_NAME, BOT_ID
 
@@ -9,7 +13,7 @@ AT_BOT = "<@" + BOT_ID + ">"
 EXAMPLE_COMMAND = "do"
 
 slack_client = SlackClient(SLACK_BOT_TOKEN)
-
+slacker = Slacker(SLACK_BOT_TOKEN)
 
 def handle_command(command, channel):
     """
@@ -19,10 +23,11 @@ def handle_command(command, channel):
     """
     print (command)
     bb = BeautyBot()
-    response = bb.chat()
-
+    response, message_attachments = bb.chat()
+    
+    slacker.chat.post_message('#beauty-bot', 'Hello fellow slackers!')
     slack_client.api_call("chat.postMessage", channel=channel,
-                          text=response, as_user=True)
+                          text=response, as_user=True, attachments=message_attachments)
 
 
 def parse_slack_output(slack_rtm_output):
