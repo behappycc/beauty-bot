@@ -1,6 +1,7 @@
 import os
 import time
 from slackclient import SlackClient
+from beauty_bot import BeautyBot
 
 from slack_config import SLACK_BOT_TOKEN, BOT_NAME, BOT_ID
 
@@ -17,7 +18,8 @@ def handle_command(command, channel):
         returns back what it needs for clarification.
     """
     print (command)
-    response = command + ' haha'
+    bb = BeautyBot()
+    response = bb.chat()
 
     slack_client.api_call("chat.postMessage", channel=channel,
                           text=response, as_user=True)
@@ -42,7 +44,7 @@ def parse_slack_output(slack_rtm_output):
 if __name__ == "__main__":
     READ_WEBSOCKET_DELAY = 1 # 1 second delay between reading from firehose
     if slack_client.rtm_connect():
-        print("StarterBot connected and running!")
+        print("BeautyBot connected and running!")
         while True:
             command, channel = parse_slack_output(slack_client.rtm_read())
             if command and channel:
