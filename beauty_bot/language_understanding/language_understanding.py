@@ -2,7 +2,7 @@ class LanguageUnderstanding(object):
     def __init__(self):
         pass
 
-    def test(self):
+    def test(self,):
         print('lu')
 
 

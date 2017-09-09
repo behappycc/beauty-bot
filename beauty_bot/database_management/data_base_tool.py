@@ -10,8 +10,11 @@ class PixnetDatabase(object):
         pass
 
     def search_article(self, collection_pixnet, search_rule):
+        article_list = []
         for article in collection_pixnet.find(search_rule):
             print(article)
+            article_list.append(article['title'])
+        return article_list
 
 
 def main():

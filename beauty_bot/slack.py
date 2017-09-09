@@ -21,9 +21,12 @@ def handle_command(command, channel):
         are valid commands. If so, then acts on the commands. If not,
         returns back what it needs for clarification.
     """
-    print (command)
     bb = BeautyBot()
-    response, message_attachments = bb.chat()
+    print(command)
+    if isinstance(command, str):
+        response, message_attachments = bb.chat(command)
+    else:
+        response, message_attachments = bb.chat("not string input")
     
     slacker.chat.post_message('#beauty-bot', 'Hello fellow slackers!')
     slack_client.api_call("chat.postMessage", channel=channel,
