@@ -43,11 +43,13 @@ def parse_slack_output(slack_rtm_output):
         output_list = slack_rtm_output
         if output_list and len(output_list) > 0:
             for output in output_list:
-                if output and 'text' in output and AT_BOT in output['text']:
-                    # return text after the @ mention, whitespace removed #
-                    out_put_text = output['text'].split(AT_BOT)[1].strip().lower()
-                    print(out_put_text)
-                    return out_put_text, output['channel']
+                if output and 'text' in output:
+                    print(output['text'])
+                    if AT_BOT in output['text']:
+                        # return text after the @ mention, whitespace removed #
+                        out_put_text = output['text'].split(AT_BOT)[1].strip().lower()
+                        print(out_put_text)
+                        return out_put_text, output['channel']
         return None, None
     except:
         return None, None
