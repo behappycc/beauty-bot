@@ -49,6 +49,12 @@ class DataBase(object):
         title = content['title']
         if "唇" in title:
             category = "lips"
+        elif "眼" in title:
+            category = "eyes"
+        elif "霜" in title:
+            category = "cream"
+        elif "面膜" in title:
+            category = "mask"
         else:
             category = "other"
         article = {
