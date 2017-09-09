@@ -39,15 +39,18 @@ def parse_slack_output(slack_rtm_output):
         this parsing function returns None unless a message is
         directed at the Bot, based on its ID.
     """
-    output_list = slack_rtm_output
-    if output_list and len(output_list) > 0:
-        for output in output_list:
-            if output and 'text' in output and AT_BOT in output['text']:
-                # return text after the @ mention, whitespace removed #
-                out_put_text = output['text'].split(AT_BOT)[1].strip().lower()
-                print(out_put_text)
-                return out_put_text, output['channel']
-    return None, None
+    try:
+        output_list = slack_rtm_output
+        if output_list and len(output_list) > 0:
+            for output in output_list:
+                if output and 'text' in output and AT_BOT in output['text']:
+                    # return text after the @ mention, whitespace removed #
+                    out_put_text = output['text'].split(AT_BOT)[1].strip().lower()
+                    print(out_put_text)
+                    return out_put_text, output['channel']
+        return None, None
+    except:
+        return None, None
 
 
 if __name__ == "__main__":
