@@ -19,6 +19,12 @@ class DataBase(object):
         title = content['title']
         if "唇" in title:
             category = "lips"
+        elif "眼" in title:
+            category = "eyes"
+        elif "霜" in title:
+            category = "cream"
+        elif "面膜" in title:
+            category = "mask"
         else:
             category = "other"
         article = {
@@ -109,8 +115,16 @@ def main():
 
     collection_pixnet = client[DB_NAME]["pixnet"]
     print(collection_pixnet.count())
+    collection_ptt = client[DB_NAME]["ptt"]
+    print(collection_ptt.count())
 
-    for article in collection_pixnet.find({"category": "lips", "title": {"$regex": "霧"}}):
+    ptt_article = collection_ptt.find({"category": "lips", "title": {"$regex": "霧面"}})
+    print(ptt_article.count())
+    for article in ptt_article[:5]:
+        print(article)
+    pixnet_article = collection_pixnet.find({"category": "lips", "title": {"$regex": "霧面"}})
+    print(pixnet_article.count())
+    for article in pixnet_article[:5]:
         print(article)
 
 if __name__ == '__main__':
