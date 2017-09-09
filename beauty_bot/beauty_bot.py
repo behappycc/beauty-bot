@@ -17,19 +17,19 @@ class BeautyBot(object):
                 search_rule = {"category": "lips", "title": {"$regex": "霧面"}}
 
                 article_list = p_db.search_article(collection_pixnet, search_rule)
-                pick_pixnet_article_title = [art['title'][:5] + "..." for art in article_list[:3]]
+                pick_pixnet_article_title = [art['title'][:20] + "..." for art in article_list[:3]]
                 list_array = ", \n".join(pick_pixnet_article_title)
 
                 ptt_article = p_db.search_article(collection_ptt, search_rule)
                 push = sum([art['message_push'] for art in ptt_article[:3]])
                 total = sum([art['message_all'] for art in ptt_article[:3]])
                 rating = push / total
-                pick_ptt_article_title = [art['title'][:5]+"..." for art in ptt_article[:3]]
+                pick_ptt_article_title = [art['title'][:20]+"..." for art in ptt_article[:3]]
                 ptt_array = ", \n".join(pick_ptt_article_title)
 
                 message = '找到 ' + str(len(article_list)) + ' 篇文章, 前三推荐：\n' + list_array
                 message += 'ptt 找到 ' + str(len(ptt_article)) + ' 篇文章, 前三推荐：\n' + ptt_array
-                message += '共' + str(total) + '篇回文, 推的比率為' + str(rating)
+                message += '共' + str(total) + '篇回應, 推的比率為' + str(round(rating, 1))
             else:
                 message = '你說啥麼？'
         else:
