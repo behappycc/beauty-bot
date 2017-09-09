@@ -3,10 +3,7 @@ import time
 import json
 from slacker import Slacker
 from slackclient import SlackClient
-
 from beauty_bot import BeautyBot
-
-
 from slack_config import SLACK_BOT_TOKEN, BOT_NAME, BOT_ID
 
 AT_BOT = "<@" + BOT_ID + ">"
