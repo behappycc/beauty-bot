@@ -27,7 +27,7 @@ def handle_command(command, channel):
         response, message_attachments = bb.chat("not string input")
     """
     response = "Hi! I am alive."
-    slacker.chat.post_message('#beauty-bot', 'Hello fellow slackers!')
+    # slacker.chat.post_message('#beautybot2', 'Hello fellow slackers!')
     slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
     # slack_client.api_call("chat.postMessage", channel=channel,
     #                       text=response, as_user=True, attachments=message_attachments)
@@ -50,12 +50,13 @@ def parse_slack_output(slack_rtm_output):
 
 
 if __name__ == "__main__":
-    READ_WEBSOCKET_DELAY = 1 # 1 second delay between reading from firehose
+    READ_WEBSOCKET_DELAY = 1  # 1 second delay between reading from firehose
     if slack_client.rtm_connect():
         print("BeautyBot connected and running!")
         while True:
             command, channel = parse_slack_output(slack_client.rtm_read())
             if command and channel:
+                print(command)
                 handle_command(command, channel)
             time.sleep(READ_WEBSOCKET_DELAY)
     else:
