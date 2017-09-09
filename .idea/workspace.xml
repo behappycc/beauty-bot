@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb14a2f7-1747-4622-8f70-f9b9a79b23d6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beauty_bot/beauty_bot.py" afterPath="$PROJECT_DIR$/beauty_bot/beauty_bot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beauty_bot/slack.py" afterPath="$PROJECT_DIR$/beauty_bot/slack.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beauty_bot/slack_config.py" afterPath="$PROJECT_DIR$/beauty_bot/slack_config.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="beauty_bot.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="beauty_bot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/beauty_bot/beauty_bot.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="99">
@@ -67,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slack_config.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="slack_config.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/beauty_bot/slack_config.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -98,10 +96,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/beauty_bot/pixnet_slack.py" />
         <option value="$PROJECT_DIR$/beauty_bot/database_management/data_base_tool.py" />
-        <option value="$PROJECT_DIR$/beauty_bot/slack_config.py" />
         <option value="$PROJECT_DIR$/beauty_bot/slack.py" />
         <option value="$PROJECT_DIR$/beauty_bot/database_management/set_up_monogodb.py" />
         <option value="$PROJECT_DIR$/beauty_bot/beauty_bot.py" />
+        <option value="$PROJECT_DIR$/beauty_bot/slack_config.py" />
       </list>
     </option>
   </component>
@@ -481,14 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beauty_bot/slack_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="61" lean-forward="false" selection-start-line="0" selection-start-column="61" selection-end-line="0" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/beauty_bot/database_management/data_base_tool.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -526,6 +516,14 @@
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beauty_bot/slack_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="61" lean-forward="false" selection-start-line="0" selection-start-column="61" selection-end-line="0" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>
