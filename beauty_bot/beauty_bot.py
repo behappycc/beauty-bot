@@ -24,7 +24,7 @@ class BeautyBot(object):
                 search_rule.append({"title": {"$regex": word}})
         """
         search_rule = []
-        jieba_list = list(jieba.cut_for_search(input()))
+        jieba_list = list(jieba.cut_for_search(input))
         print(jieba_list)
         for word in jieba_list:
             search_rule.append({"title": {"$regex": word}})
