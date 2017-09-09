@@ -45,6 +45,42 @@ class DataBase(object):
                 except KeyError as e:
                     print("KeyError" + str(e))
 
+    def create_ptt(self, collection_ptt, content):
+        title = content['title']
+        if "唇" in title:
+            category = "lips"
+        else:
+            category = "other"
+        article = {
+            "article_id": content["article_id"],
+            "title": title,
+            "category": category,
+            "message_all": content["message_all"],
+            "message_push": content["message_push"],
+            "message_boo": content["message_boo"]
+        }
+        collection_ptt.insert_one(article).inserted_id
+
+    def create_collection_ptt(self, collection_ptt):
+        self.remove_all_documents(collection_ptt)
+        with open("MakeUp.json") as ptt_makeup_file:
+            ptt_makeup = json.load(ptt_makeup_file)
+            for post in ptt_makeup['articles']:
+                post_id = post['article_id']
+                post_title = post['article_title']
+                try:
+                    content = {
+                        "title": post_title,
+                        "article_id": post_id,
+                        "message_all": post['message_conut']['all'],
+                        "message_push": post['message_conut']['push'],
+                        "message_boo": post['message_conut']['boo'],
+                    }
+                    print(content['title'])
+                    self.create_ptt(collection_ptt, content)
+                except KeyError as e:
+                    print("KeyError" + str(e))
+
 
 def main():
     client = MongoClient(DB_IP, DB_PORT)
@@ -57,6 +93,14 @@ def main():
     # Delete all data
     # drop_db(client, DB_NAME)
     """
+
+    """
+    db = DataBase()
+    collection_ptt = client[DB_NAME]["ptt"]
+    db.create_collection_ptt(collection_ptt)
+    print(collection_ptt.count())
+    """
+
     collection_pixnet = client[DB_NAME]["pixnet"]
     print(collection_pixnet.count())
 

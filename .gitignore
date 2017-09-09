@@ -102,3 +102,8 @@ ENV/
 
 # slack configuration file
 # slack_config.py
+
+#mac OS
+.DS_Store
+beauty_bot/.DS_Store
+beauty_bot/database_management/MakeUp.json
