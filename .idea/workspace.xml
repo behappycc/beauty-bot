@@ -56,8 +56,8 @@
       <file leaf-file-name="beauty_bot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/beauty_bot/beauty_bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="846">
-              <caret line="47" column="41" lean-forward="true" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+            <state relative-caret-position="324">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -98,8 +98,8 @@
         <option value="$PROJECT_DIR$/beauty_bot/database_management/data_base_tool.py" />
         <option value="$PROJECT_DIR$/beauty_bot/slack.py" />
         <option value="$PROJECT_DIR$/beauty_bot/database_management/set_up_monogodb.py" />
-        <option value="$PROJECT_DIR$/beauty_bot/beauty_bot.py" />
         <option value="$PROJECT_DIR$/beauty_bot/slack_config.py" />
+        <option value="$PROJECT_DIR$/beauty_bot/beauty_bot.py" />
       </list>
     </option>
   </component>
@@ -519,8 +519,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/beauty_bot/beauty_bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="47" column="41" lean-forward="true" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+        <state relative-caret-position="324">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
