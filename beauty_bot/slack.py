@@ -4,9 +4,9 @@ import json
 from slacker import Slacker
 from slackclient import SlackClient
 from beauty_bot import BeautyBot
-from slack_config import SLACK_BOT_TOKEN, BOT_NAME
+from slack_config import SLACK_BOT_TOKEN, BOT_ID
 
-# AT_BOT = "<@" + BOT_ID + ">"
+AT_BOT = "<@" + BOT_ID + ">"
 EXAMPLE_COMMAND = "do"
 
 slack_client = SlackClient(SLACK_BOT_TOKEN)
