@@ -42,9 +42,9 @@ def parse_slack_output(slack_rtm_output):
     output_list = slack_rtm_output
     if output_list and len(output_list) > 0:
         for output in output_list:
-            if output and 'text' in output and AT_BOT in output['text']:
-                # return text after the @ mention, whitespace removed
-                return output['text'].split(AT_BOT)[1].strip().lower(), \
+            if output and 'text' in output:  # and AT_BOT in output['text']:
+                # return text after the @ mention, whitespace removed # .split(AT_BOT)[1].strip().lower()
+                return output['text'], \
                        output['channel']
     return None, None
 
@@ -55,6 +55,7 @@ if __name__ == "__main__":
         print("BeautyBot connected and running!")
         while True:
             command, channel = parse_slack_output(slack_client.rtm_read())
+            print(command, channel)
             if command and channel:
                 print(command)
                 handle_command(command, channel)
