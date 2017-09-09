@@ -4,6 +4,7 @@ import json
 DB_IP = "35.194.174.101"  # 35.194.174.101
 DB_PORT = 27017  # default MongoDB port
 DB_NAME = "beautybot"  # use the collection
+
 class PixnetDatabase(object):
 
     def __init__(self):
@@ -12,8 +13,8 @@ class PixnetDatabase(object):
     def search_article(self, collection_pixnet, search_rule):
         article_list = []
         for article in collection_pixnet.find(search_rule):
-            print(article)
-            article_list.append(article['title'])
+            print(article['title'])
+            article_list.append(article)
         return article_list
 
 
