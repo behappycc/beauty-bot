@@ -25,14 +25,14 @@ class BeautyBot(object):
                            "$and": search_rule
                            }
             article_list = p_db.search_article(collection_pixnet, search_rule)
-            pick_pixnet_article_title = [art['title'][:20] + "..." for art in article_list[:3]]
+            pick_pixnet_article_title = [art['title'] for art in article_list[:3]]
             list_array = ", \n".join(pick_pixnet_article_title)
 
             ptt_article = p_db.search_article(collection_ptt, search_rule)
             push = sum([art['message_push'] for art in ptt_article[:3]])
             total = sum([art['message_all'] for art in ptt_article[:3]])+1
             rating = push / total
-            pick_ptt_article_title = [art['title'][:20]+"..." for art in ptt_article[:3]]
+            pick_ptt_article_title = [art['title'] for art in ptt_article[:3]]
             ptt_array = ", \n".join(pick_ptt_article_title)
 
             message = '找到 ' + str(len(article_list)) + ' 篇文章, 前三推荐：\n' + list_array + '\n'
