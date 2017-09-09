@@ -1,0 +1,3 @@
+SLACK_BOT_TOKEN = 'xoxb-237810159383-gkbQlEydpkx9bM7OdqJkLJcV'
+BOT_NAME = 'beautybot'
+BOT_ID = 'U6ZPU4PB9'

@@ -101,4 +101,4 @@ ENV/
 .mypy_cache/
 
 # slack configuration file
-slack_config.py
+# slack_config.py
