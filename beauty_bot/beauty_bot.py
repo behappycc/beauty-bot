@@ -38,6 +38,8 @@ class BeautyBot(object):
             message = '找到 ' + str(len(article_list)) + ' 篇文章, 前三推荐：\n' + list_array + '\n'
             message += 'ptt 找到 ' + str(len(ptt_article)) + ' 篇文章, 前三推荐：\n' + ptt_array
             message += '共' + str(total) + '篇回應, 推的比率為' + str(round(rating, 1))
+        elif input in ['Hi', 'hi', '你好']:
+            message = 'Hi~Beauty~~'
         else:
             message = '你說啥麼？'
 
