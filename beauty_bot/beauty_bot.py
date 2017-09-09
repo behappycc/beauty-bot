@@ -14,7 +14,8 @@ class BeautyBot(object):
         p_db = PixnetDatabase()
         key_word = ['玫瑰金', '咬唇', '韓系', '土色', '裸色', '裸粉', '大紅', '暗紅', '血色',
                     '平價', '鍍金', '持久', '染唇', '絲絨', 'ysl', 'YSL', 'chanel', 'Chanel', 'dior', 'Dior',
-                    'M.A.C', 'MAC', '雅詩蘭黛', '紀梵希', '蘭蔻', '美寶蓮', '巴黎萊雅', '紅']
+                    'M.A.C', 'MAC', '雅詩蘭黛', '紀梵希', '蘭蔻', '美寶蓮', '巴黎萊雅', '紅', '試色', '分享',
+                    '保溼', '顯色', '修護']
         search_rule = []
         for word in key_word:
             if word in input:
@@ -29,7 +30,7 @@ class BeautyBot(object):
 
             ptt_article = p_db.search_article(collection_ptt, search_rule)
             push = sum([art['message_push'] for art in ptt_article[:3]])
-            total = sum([art['message_all'] for art in ptt_article[:3]])
+            total = sum([art['message_all'] for art in ptt_article[:3]])+1
             rating = push / total
             pick_ptt_article_title = [art['title'][:20]+"..." for art in ptt_article[:3]]
             ptt_array = ", \n".join(pick_ptt_article_title)
