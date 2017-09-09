@@ -13,7 +13,7 @@ class BeautyBot(object):
         collection_pixnet = client[DB_NAME]["pixnet"]
         collection_ptt = client[DB_NAME]["ptt"]
         p_db = PixnetDatabase()
-        """
+
         key_word = ['玫瑰金', '咬唇', '韓系', '土色', '裸色', '裸粉', '大紅', '暗紅', '血色',
                     '平價', '鍍金', '持久', '染唇', '絲絨', 'ysl', 'YSL', 'chanel', 'Chanel', 'dior', 'Dior',
                     'M.A.C', 'MAC', '雅詩蘭黛', '紀梵希', '蘭蔻', '美寶蓮', '巴黎萊雅', '紅', '試色', '分享',
@@ -28,7 +28,7 @@ class BeautyBot(object):
         print(jieba_list)
         for word in jieba_list:
             search_rule.append({"title": {"$regex": word}})
-
+        """
         if "唇" in input:
             search_rule = {"category": "lips",
                            "$or": search_rule
